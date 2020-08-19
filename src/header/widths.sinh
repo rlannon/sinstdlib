@@ -1,0 +1,25 @@
+/*
+
+SIN Standard Library
+Copyright 2020 Riley Lannon
+
+widths.sinh
+Contains named constants for various type widths within SIN, expressed as a number of bytes.
+Because of SIN's visibility rules, these symbols must use the 'extern' quality.
+
+*/
+
+// integral types
+alloc static const short int BYTE_WIDTH &extern: 1;
+alloc static const short int SHORT_WIDTH &extern: 2;
+alloc static const short int INT_WIDTH &extern: 4;
+alloc static const short int PTR_WIDTH &extern: 8;
+
+// floating-point
+alloc static const short int SINGLE_PRECISION_WIDTH &extern: 4;
+alloc static const short int DOUBLE_PRECISION_WIDTH &extern: 8;
+
+// other
+alloc static const short int CHAR_WIDTH &extern: 1;
+alloc static const short int ARRAY_BASE_WIDTH &extern: 4;
+alloc static const short int STRING_BASE_WIDTH &extern: 5;

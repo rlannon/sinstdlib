@@ -1,0 +1,77 @@
+/*
+
+SIN Standard Library
+Copyright 2020 Riley Lannon
+
+typecast.sin
+Implementation of the typecasting functions
+
+*/
+
+include "../header/typecast.sinh";
+
+// Integers
+
+def string itos (alloc int n) {
+    /*
+
+    itos
+    Converts a 32-bit signed integer to a string
+
+    */
+    
+    alloc string s: "";
+    alloc bool is_negative = n < 0;
+    while (n > 0) {
+        alloc int d: n % 10;
+        alloc char c: 48 + d;   // 48 is ASCII '0'
+        let s += c;
+        let n /= 10;
+    }
+
+    if (is_negative) let s += '-';
+    
+    alloc string to_return: "";
+    alloc int i &unsigned: s:len;
+    while (i > 0) {
+        let to_return += s[i - 1];
+    }
+
+    return to_return;
+}
+
+def int stoi (alloc string s) {
+    // todo
+}
+
+def int stoul &unsigned long (alloc string s) {
+    // todo
+}
+
+// Floats
+
+def string sftos (alloc float n) {
+    // todo
+}
+
+def string dftos (alloc float n &long) {
+    // todo
+}
+
+def float stosf (alloc string s) {
+    // todo
+}
+
+def float stodf &long (alloc string s) {
+    // todo
+}
+
+// Booleans
+
+def bool stob (alloc string s) {
+    // todo
+}
+
+def string btos (alloc bool b) {
+    // todo
+}

@@ -1,6 +1,0 @@
-// stdio.sinh
-// The standard I/O header for sinh
-
-decl void print(decl string s);
-
-decl string input();

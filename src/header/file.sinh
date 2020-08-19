@@ -1,0 +1,26 @@
+/*
+
+SIN Standard Library
+Copyright 2020 Riley Lannon
+
+file.sinh
+Contains declarations for file I/O functionality
+
+*/
+
+// file struct
+def struct file {
+    // todo: file struct
+
+    alloc int size &unsigned long;
+    ptr< array<byte> > data;
+}
+
+// open, close, create
+decl ptr<file> open_file(decl string name);
+decl void close_file(decl ptr<file> f);
+decl ptr<file> create_file(decl string name, decl int init_size &unsigned long);
+
+// access, modification
+decl bool write(decl ref<file> f, decl ref< array<byte> > data, decl bool include_length);
+decl int read &unsigned(decl ref<file> f, decl ref< array<byte> > dest, decl int len &unsigned);

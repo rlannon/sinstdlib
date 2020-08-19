@@ -1,0 +1,24 @@
+/*
+
+SIN Standard Library
+Copyright 2020 Riley Lannon
+
+typecast.sinh
+Allows typecasting between types not otherwise supported by the language's 'as' keyword, specifically string parsing
+
+*/
+
+// integers
+decl string itos(decl int n);
+decl int stoi(decl string s);
+decl int stoul &unsigned long (decl string s);
+
+// floats
+decl string sftos(decl float n);
+decl string dftos(decl float n &long);
+decl float stosf(decl string s);
+decl float stodf &long (decl string s);
+
+// boolean
+decl bool stob(decl string s);
+decl string btos(decl bool b);

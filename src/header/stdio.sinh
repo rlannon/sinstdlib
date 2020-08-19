@@ -1,0 +1,12 @@
+/*
+
+SIN Standard Library
+Copyright 2020 Riley Lannon
+
+stdio.sinh
+The standard IO module
+
+*/
+
+decl void print(decl string s);
+decl string input();
