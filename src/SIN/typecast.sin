@@ -24,7 +24,7 @@ def string itos (alloc int n) {
     */
     
     alloc string s: "";
-    alloc bool is_negative = n < 0;
+    alloc bool is_negative: n < 0;
     while (n > 0) {
         alloc int d: n % 10;
         alloc char c: (ASCII_NUMERIC_BASE + d) as char;
