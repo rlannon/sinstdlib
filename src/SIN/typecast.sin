@@ -9,6 +9,9 @@ Implementation of the typecasting functions
 */
 
 include "../header/typecast.sinh";
+include "../header/math.sinh";
+
+alloc static const int ASCII_NUMERIC_BASE: 48;  // 48 is '0' in ASCII
 
 // Integers
 
@@ -24,7 +27,7 @@ def string itos (alloc int n) {
     alloc bool is_negative = n < 0;
     while (n > 0) {
         alloc int d: n % 10;
-        alloc char c: 48 + d;   // 48 is ASCII '0'
+        alloc char c: (ASCII_NUMERIC_BASE + d) as char;
         let s += c;
         let n /= 10;
     }
@@ -35,43 +38,84 @@ def string itos (alloc int n) {
     alloc int i &unsigned: s:len;
     while (i > 0) {
         let to_return += s[i - 1];
+        let i -= 1;
     }
 
     return to_return;
 }
 
 def int stoi (alloc string s) {
-    // todo
+    /*
+
+    stoi
+    Converts a string to a 32-bit signed integer
+
+    If the string contains illegal characters, returns 0
+
+    */
+    
+    alloc bool is_negative: s[0] = '-';
+    alloc int n: 0;
+    alloc int i &unsigned: s:len;
+    alloc int exp &unsigned: 0;
+    while (i > 0) {
+        if (s[i - 1] as int >= 48 && s[i - 1] as int < 58) {
+            let n += (s[i - 1] as int - ASCII_NUMERIC_BASE) * @pow(10, exp);
+        }
+        else {
+            // todo: error
+        }
+
+        let i -= 1;
+    }
+
+    if (is_negative) let n = -n;
+    return n;
 }
 
 def int stoul &unsigned long (alloc string s) {
     // todo
+    return 0;
 }
 
 // Floats
 
 def string sftos (alloc float n) {
     // todo
+    return "";
 }
 
 def string dftos (alloc float n &long) {
     // todo
+    return "";
 }
 
 def float stosf (alloc string s) {
     // todo
+    return 0.0;
 }
 
 def float stodf &long (alloc string s) {
     // todo
+    return 0.0 &long;
 }
 
 // Booleans
 
 def bool stob (alloc string s) {
-    // todo
+    /*
+
+    stob
+    Converts a string to a boolean
+
+    This follows the Python cast rule where a string of length 0 is 'false', otherwise it is 'true'
+
+    */
+    
+    return s:len as bool;
 }
 
 def string btos (alloc bool b) {
-    // todo
+    if (b) return "true";
+    else return "false";
 }
