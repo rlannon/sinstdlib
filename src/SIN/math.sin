@@ -1,0 +1,27 @@
+// SIN Standard Library
+// Copyright 2020 Riley Lannon
+
+// math.sin
+// Implementation of the math functions
+
+include "../header/math.sinh";
+
+def int pow &long(alloc int base, alloc int exp) {
+    // pow
+    // Calculates expression base^pow and returns the result
+
+    if (exp = 0) {
+        return 1 &long;
+    }
+    else {
+        alloc int result: base;
+        alloc int i: 1;
+    
+        while (i < exp) {
+            let result *= base;
+            let i += 1;
+        }
+
+        return result;
+    }
+}
