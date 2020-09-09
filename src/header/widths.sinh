@@ -1,13 +1,9 @@
-/*
+// SIN Standard Library
+// Copyright 2020 Riley Lannon
 
-SIN Standard Library
-Copyright 2020 Riley Lannon
-
-widths.sinh
-Contains named constants for various type widths within SIN, expressed as a number of bytes.
-Because of SIN's visibility rules, these symbols must use the 'extern' quality.
-
-*/
+// widths.sinh
+// Contains named constants for various type widths within SIN, expressed as a number of bytes.
+// Because of SIN's visibility rules, these symbols must use the 'extern' quality.
 
 // integral types
 alloc static const short int BYTE_WIDTH &extern: 1;

@@ -1,12 +1,8 @@
-/*
+// SIN Standard Library
+// Copyright 2020 Riley Lannon
 
-SIN Standard Library
-Copyright 2020 Riley Lannon
-
-file.sinh
-Contains declarations for file I/O functionality
-
-*/
+// file.sinh
+// Contains declarations for file I/O functionality
 
 // file struct
 def struct file {

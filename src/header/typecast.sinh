@@ -1,12 +1,8 @@
-/*
+// SIN Standard Library
+// Copyright 2020 Riley Lannon
 
-SIN Standard Library
-Copyright 2020 Riley Lannon
-
-typecast.sinh
-Allows typecasting between types not otherwise supported by the language's 'as' keyword, specifically string parsing
-
-*/
+// typecast.sinh
+// Allows typecasting between types not otherwise supported by the language's 'as' keyword, specifically string parsing
 
 // integers
 decl string itos(decl int n);

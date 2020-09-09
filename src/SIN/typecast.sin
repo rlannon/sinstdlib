@@ -1,12 +1,8 @@
-/*
+// SIN Standard Library
+// Copyright 2020 Riley Lannon
 
-SIN Standard Library
-Copyright 2020 Riley Lannon
-
-typecast.sin
-Implementation of the typecasting functions
-
-*/
+// typecast.sin
+// Implementation of the typecasting functions
 
 include "../header/typecast.sinh";
 include "../header/math.sinh";
@@ -16,15 +12,11 @@ alloc static const int ASCII_NUMERIC_BASE: 48;  // 48 is '0' in ASCII
 // Integers
 
 def string itos (alloc int n) {
-    /*
-
-    itos
-    Converts a 32-bit signed integer to a string
-
-    */
+    // itos
+    // Converts a 32-bit signed integer to a string
     
     alloc string s: "";
-    alloc bool is_negative: n < 0;
+    alloc bool negative: n < 0;
     while (n > 0) {
         alloc int d: n % 10;
         alloc char c: (ASCII_NUMERIC_BASE + d) as char;
@@ -32,7 +24,7 @@ def string itos (alloc int n) {
         let n /= 10;
     }
 
-    if (is_negative) let s += '-';
+    if (negative) let s += '-';
     
     alloc string to_return: "";
     alloc int i &unsigned: s:len;
@@ -45,37 +37,35 @@ def string itos (alloc int n) {
 }
 
 def int stoi (alloc string s) {
-    /*
+    // stoi
+    // Converts a string to a 32-bit signed integer
 
-    stoi
-    Converts a string to a 32-bit signed integer
-
-    If the string contains illegal characters, returns 0
-
-    */
+    // If the string contains illegal characters, returns 0
     
-    alloc bool is_negative: s[0] = '-';
+    alloc bool negative: s[0] = '-';
     alloc int n: 0;
     alloc int i &unsigned: s:len;
     alloc int exp &unsigned: 0;
     while (i > 0) {
-        if (s[i - 1] as int >= 48 && s[i - 1] as int < 58) {
+        if (s[i - 1] as int >= 48 and s[i - 1] as int < 58) {
             let n += (s[i - 1] as int - ASCII_NUMERIC_BASE) * @pow(10, exp);
         }
         else {
-            // todo: error
+            return 0;
         }
 
         let i -= 1;
     }
 
-    if (is_negative) let n = -n;
+    if (negative)
+        let n = -n;
+    
     return n;
 }
 
 def int stoul &unsigned long (alloc string s) {
     // todo
-    return 0;
+    return 0 &unsigned long;
 }
 
 // Floats
@@ -103,19 +93,17 @@ def float stodf &long (alloc string s) {
 // Booleans
 
 def bool stob (alloc string s) {
-    /*
+    // stob
+    // Converts a string to a boolean
 
-    stob
-    Converts a string to a boolean
-
-    This follows the Python cast rule where a string of length 0 is 'false', otherwise it is 'true'
-
-    */
+    // This follows the Python cast rule where a string of length 0 is 'false', otherwise it is 'true'
     
     return s:len as bool;
 }
 
 def string btos (alloc bool b) {
-    if (b) return "true";
-    else return "false";
+    if (b)
+        return "true";
+    else
+        return "false";
 }

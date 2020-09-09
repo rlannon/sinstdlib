@@ -1,11 +1,7 @@
-/*
+// SIN Standard Library
+// Copyright 2020 Riley Lannon
 
-SIN Standard Library
-Copyright 2020 Riley Lannon
-
-math.sinh
-Contains declarations for the stdlib's math functions
-
-*/
+// math.sinh
+// Contains declarations for the stdlib's math functions
 
 decl int pow &long (decl int base, decl int exp);
