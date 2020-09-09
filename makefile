@@ -15,7 +15,7 @@ os_name := $(shell uname)
 
 # ASM macros
 asm=nasm
-asm_flags=-g
+asm_flags=-g -i ../SRE/src/asm/
 ifeq ($(os_name), Linux)
 	asm_flags += -f elf64
 endif
