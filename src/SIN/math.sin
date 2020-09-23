@@ -8,17 +8,19 @@ include "../header/math.sinh";
 
 def int pow &long(alloc int base, alloc int exp) {
     // pow
+    
     // Calculates expression base^exp and returns the result
+    // This function utilizes an optimized exponentiation by squaring algorithm
 
     alloc long int result: 1 &long;
 
     while (exp as bool) {
         if ((exp & 1) as bool) {
-            let result *= a;
+            let result *= base;
         }
 
-        let b >>= 1;
-        let a *= a;
+        let exp >>= 1;
+        let base *= base;
     }
 
     return result;
