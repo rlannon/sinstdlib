@@ -48,7 +48,7 @@ def int stoi (alloc string s) {
     alloc int exp &unsigned: 0;
     while (i > 0) {
         if (s[i - 1] as int >= 48 and s[i - 1] as int < 58) {
-            let n += (s[i - 1] as int - ASCII_NUMERIC_BASE) * @pow(10, exp);
+            let n += (s[i - 1] as int - ASCII_NUMERIC_BASE) * @pow(10, exp as signed int);
         }
         else {
             return 0;
