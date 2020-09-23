@@ -8,20 +8,18 @@ include "../header/math.sinh";
 
 def int pow &long(alloc int base, alloc int exp) {
     // pow
-    // Calculates expression base^pow and returns the result
+    // Calculates expression base^exp and returns the result
 
-    if (exp = 0) {
-        return 1 &long;
-    }
-    else {
-        alloc int result: base;
-        alloc int i: 1;
-    
-        while (i < exp) {
-            let result *= base;
-            let i += 1;
+    alloc long int result: 1 &long;
+
+    while (exp as bool) {
+        if ((exp & 1) as bool) {
+            let result *= a;
         }
 
-        return result;
+        let b >>= 1;
+        let a *= a;
     }
+
+    return result;
 }
