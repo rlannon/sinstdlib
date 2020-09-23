@@ -16,7 +16,7 @@ def int pow &long(alloc int base, alloc int exp) {
 
     while (exp as bool) {
         if ((exp & 1) as bool) {
-            let result *= base;
+            let result *= base as int &long;
         }
 
         let exp >>= 1;
